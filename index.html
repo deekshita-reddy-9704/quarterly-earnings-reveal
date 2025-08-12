@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Reveal.js</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- Reveal.js core CSS + theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.3.1/dist/reset.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.3.1/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.3.1/dist/theme/black.css" id="theme" />
+
+  <!-- Code highlight theme (bundled with reveal.js plugins) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.3.1/plugin/highlight/monokai.css" />
+
+  <!-- KaTeX CSS (math rendering) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
+  <style>
+    /* Small footer/contact styling */
+    .contact { position: absolute; right: 1rem; bottom: 0.5rem; font-size: 0.9rem; opacity: .85; }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings — Q2</h1>
+        <p>Technical presentation for stakeholders</p>
+        <p class="contact">Contact: <a href="mailto:22f3000075@ds.study.iitm.ac.in">22f3000075@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">(Intro) Quick overview; mention agenda and purpose.</aside>
+      </section>
+
+      <!-- Markdown slide (written in Markdown) -->
+      <section data-markdown>
+        <textarea data-template>
+## Key Highlights (Markdown)
+
+- **Revenue:** ₹20.0M (↑ 8% QoQ) <!-- .element: class="fragment" data-fragment-index="1" -->
+- **Net Profit:** ₹3.2M (↑ 12% QoQ)   <!-- .element: class="fragment" data-fragment-index="2" -->
+- **EPS:** ₹1.45                         <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
+## Notes (Markdown)
+- Commentary and callouts can be added here.
+        </textarea>
+      </section>
+
+      <!-- Fragment animations (HTML slide) -->
+      <section>
+        <h2>Revenue by Product</h2>
+        <ul>
+          <li class="fragment">Product A — ₹10M</li>
+          <li class="fragment">Product B — ₹7M</li>
+          <li class="fragment">Product C — ₹3M</li>
+        </ul>
+        <aside class="notes">Walk through each product and call out drivers and anomalies.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Sample: YoY Growth (Python)</h2>
+        <pre><code class="language-python">
+def yoy_growth(prev, curr):
+    return (curr - prev) / prev
+
+print(f"Growth = {yoy_growth(100, 112):.2%}")  # Growth = 12.00%
+        </code></pre>
+        <aside class="notes">Explain the snippet: simple percent growth calculation.</aside>
+      </section>
+
+      <!-- Math (KaTeX) slide -->
+      <section>
+        <h2>Financial Formula — NPV</h2>
+        <p>Net Present Value:</p>
+        <p>$$
+          \mathrm{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1+r)^t}
+        $$</p>
+        <aside class="notes">Explain cashflows \(C_t\), discount rate \(r\), and decision rule (NPV&gt;0).</aside>
+      </section>
+
+      <!-- Contact / closing -->
+      <section>
+        <h2>Questions & Contact</h2>
+        <p>Email: <a href="mailto:22f3000075@ds.study.iitm.ac.in">22f3000075@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">Thank stakeholders. Offer follow-up data pack and appendix link.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins (via UNPKG) -->
+  <script src="https://unpkg.com/reveal.js@4.3.1/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.3.1/plugin/math/math.js"></script>
+
+  <!-- If math plugin expects KaTeX, include it too (plugin can also load it) -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      highlight: { highlightOnLoad: true }
+    });
+  </script>
+</body>
+</html>
